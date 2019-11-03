@@ -44,6 +44,12 @@ else
 	cp -r $CACHE_DIR/elasticsearch-$VERSION/*  $INSTALL_DIR/
 fi
 
+# Copy Groovy script
+$ES_SCRIPTS_DIR=$INSTALL_DIR/scripts
+ls -l $BUILD_DIR
+mkdir -p $ES_SCRIPTS_DIR
+cp $BUILD_DIR/app/scripts/ownership-script.groovy $ES_SCRIPTS_DIR
+
 cat <<EOF >> $PROFILE_PATH
 export PATH=/app/.heroku/vendor/elasticsearch/bin:\$PATH
 export ELASTICSEARCH_URL=localhost:9200
