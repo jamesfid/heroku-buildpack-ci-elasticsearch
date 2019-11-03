@@ -45,7 +45,7 @@ else
 fi
 
 # Copy Groovy script
-$ES_SCRIPTS_DIR=$INSTALL_DIR/scripts
+$ES_SCRIPTS_DIR="$INSTALL_DIR/scripts"
 ls -l $BUILD_DIR
 mkdir -p $ES_SCRIPTS_DIR
 cp $BUILD_DIR/app/scripts/ownership-script.groovy $ES_SCRIPTS_DIR
