@@ -48,6 +48,8 @@ fi
 ls -l $BUILD_DIR
 mkdir -p $INSTALL_DIR/scripts
 cp $BUILD_DIR/config/scripts/ownership-script.groovy $INSTALL_DIR/scripts
+ls -l $INSTALL_DIR
+ls -l $INSTALL_DIR/scripts
 
 cat <<EOF >> $PROFILE_PATH
 export PATH=/app/.heroku/vendor/elasticsearch/bin:\$PATH
