@@ -45,10 +45,9 @@ else
 fi
 
 # Copy Groovy script
-$ES_SCRIPTS_DIR="$INSTALL_DIR/scripts"
 ls -l $BUILD_DIR
-mkdir -p $ES_SCRIPTS_DIR
-cp $BUILD_DIR/app/scripts/ownership-script.groovy $ES_SCRIPTS_DIR
+mkdir -p $INSTALL_DIR/scripts
+cp $BUILD_DIR/app/scripts/ownership-script.groovy $INSTALL_DIR/scripts
 
 cat <<EOF >> $PROFILE_PATH
 export PATH=/app/.heroku/vendor/elasticsearch/bin:\$PATH
