@@ -45,11 +45,12 @@ else
 fi
 
 # Copy Groovy script
-ls -l $BUILD_DIR
+echo "Testing Heroku ENV: "
+echo $HEROKU_TEST_RUN_BRANCH
+echo $HEROKU_TEST_RUN_COMMIT_VERSION
+
 mkdir -p $INSTALL_DIR/config/scripts
 cp $BUILD_DIR/config/scripts/ownership-script.groovy $INSTALL_DIR/config/scripts
-ls -l $INSTALL_DIR
-ls -l $INSTALL_DIR/config/scripts
 
 cat <<EOF >> $PROFILE_PATH
 export PATH=/app/.heroku/vendor/elasticsearch/bin:\$PATH
