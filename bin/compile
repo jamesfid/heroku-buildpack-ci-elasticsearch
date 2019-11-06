@@ -45,10 +45,6 @@ else
 fi
 
 # Copy Groovy script
-echo "Testing Heroku ENV: "
-echo $HEROKU_TEST_RUN_BRANCH
-echo $HEROKU_TEST_RUN_COMMIT_VERSION
-
 mkdir -p $INSTALL_DIR/config/scripts
 cp $BUILD_DIR/config/scripts/ownership-script.groovy $INSTALL_DIR/config/scripts
 
@@ -62,6 +58,7 @@ source $BUILD_DIR/.profile.d/jvmcommon.sh
 if [ ! -f /tmp/es.pid ]; then
   echo "Starting ElasticSearch..."
   elasticsearch -d -p /tmp/es.pid
+	sleep 7
 fi
 EOF
 
